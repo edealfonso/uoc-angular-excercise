@@ -32,8 +32,8 @@
   ],
   "dataGroups": [
     {
-      "name": "images-api",
-      "urls": ["https://picsum.photos/**"],
+      "name": "punk-beer-api",
+      "urls": ["https://api.punkapi.com/v2/**"],
       "cacheConfig": {
         "maxSize": 10,
         "maxAge": "1h",

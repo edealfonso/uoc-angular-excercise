@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ImageComponent } from './components/image/image.component';
-import { ImagesComponent } from './components/images/images.component';
+import { BeerItemComponent } from './components/beer-item/beer-item.component';
+import { BeerListComponent } from './components/beer-list/beer-list.component';
 
 const routes: Routes = [
-  { path: '', component: ImagesComponent },
-  { path: 'image/:id', component: ImageComponent },
-  { path: '**', component: ImagesComponent },
+  { path: '', component: BeerListComponent },
+  { path: 'beer/:id', component: BeerItemComponent },
+  { path: '**', component: BeerListComponent },
 ];
 
 @NgModule({

@@ -1,0 +1,14 @@
+<div class="container mt-5">
+
+  <div class="row animate__animated animate__bounce animate__fadeIn">
+    <div class="col-md-9" *ngIf="beer">
+      <p><strong>Identifier:</strong> {{ beer.id }}</p>
+      <p><strong>Name:</strong> {{ beer.name }}</p>
+      <img src="{{ beer.image_url }}" style="width: 80%; height: 80%" alt="" class="rounded">
+    </div>
+
+    <div class="col-md-3">
+      <a routerLink="/" class="btn btn-danger animate__animated animate__bounce">Back</a>
+    </div>
+  </div>
+</div>

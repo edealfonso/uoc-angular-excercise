@@ -1,0 +1,7 @@
+<div class="container">
+  <h1>Punk Beers Portal</h1>
+  <a *ngFor="let beer of beers" [routerLink]="['/beer',beer.id]"
+    class="list-group-item list-group-item-action animate__animated animate__fadeIn">
+    {{ beer.id }} - {{ beer.name }}
+  </a>
+</div>
