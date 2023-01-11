@@ -1,0 +1,63 @@
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.buttons {
+  text-align: right;
+}
+
+.list-layout {
+  tr[mat-row] {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #ffd740;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  th {
+    background-color: transparent !important;
+  }
+}
+
+.card-layout {
+  padding: 5px 10px;
+  a {
+    width: 100%;
+    height: 100%;
+
+    mat-card {
+      margin: 15px 10px;
+      height: calc(100% - 20px);
+      // background-color: grey;
+
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: #ffd740;
+      }
+    }
+  }
+}
+
+#spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(210, 210, 210, 0.9);
+
+  .spinner-element {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

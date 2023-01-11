@@ -1,0 +1,13 @@
+.button {
+  @media (min-width: 768px) {
+    text-align: right;
+  }
+}
+.beer-img {
+  max-height: 400px;
+  max-width: 100%;
+
+  @media (min-width: 768px) {
+    max-height: 450px;
+  }
+}

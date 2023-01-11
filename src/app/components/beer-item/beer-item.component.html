@@ -1,14 +1,60 @@
-<div class="container mt-5">
+<div class="container mt-5 pb-5">
 
-  <div class="row animate__animated animate__bounce animate__fadeIn">
-    <div class="col-md-9" *ngIf="beer">
-      <p><strong>Identifier:</strong> {{ beer.id }}</p>
-      <p><strong>Name:</strong> {{ beer.name }}</p>
-      <img src="{{ beer.image_url }}" style="width: 80%; height: 80%" alt="" class="rounded">
-    </div>
+  <h1>Punk Beers Portal</h1>
 
-    <div class="col-md-3">
-      <a routerLink="/" class="btn btn-danger animate__animated animate__bounce">Back</a>
+  <div class="button my-3 animate__animated animate__bounce">
+    <button mat-fab color="accent" aria-label="Back" routerLink="/">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+  </div>
+
+  <div class="animate__animated animate__fadeLeftIn" *ngIf="beer">
+
+    <div class="row">
+      <h2>{{ beer.name }}</h2>
+      <div class="col-md-3 my-3">
+        <img src="{{ beer.image_url }}" class="beer-img">
+      </div>
+
+      <div class="col-md-9 my-3" *ngIf="beer">
+        <div class="details">
+          <mat-accordion>
+            <mat-expansion-panel>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  Details
+                </mat-panel-title>
+                <mat-panel-description>
+                  Click to expand
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+
+              <h4>
+                <strong>{{beer.name}}</strong><br>
+                {{beer.tagline}}
+              </h4>
+
+              <p>
+                <strong>Description:</strong><br>
+                {{beer.description}}
+              </p>
+
+              <strong>Food pairing:</strong>
+              <ul>
+                <li *ngFor="let food of beer.food_pairing">{{ food }}</li>
+              </ul>
+
+              <p>
+                <strong>First brewed:</strong><br>
+                {{beer.first_brewed}}
+              </p>
+
+              <p><em>Contributed by {{beer.contributed_by}}</em></p>
+
+            </mat-expansion-panel>
+          </mat-accordion>
+        </div>
+      </div>
     </div>
   </div>
 </div>

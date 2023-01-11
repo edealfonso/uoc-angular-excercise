@@ -1,7 +1,70 @@
-<div class="container">
+<div class="container mt-5 pb-5">
+
   <h1>Punk Beers Portal</h1>
-  <a *ngFor="let beer of beers" [routerLink]="['/beer',beer.id]"
-    class="list-group-item list-group-item-action animate__animated animate__fadeIn">
-    {{ beer.id }} - {{ beer.name }}
-  </a>
+
+  <div class="buttons">
+    <mat-button-toggle-group #group="matButtonToggleGroup" [value]="layout" (change)="onLayoutChange(group.value)">
+      <mat-button-toggle value="list" aria-label="List layout">
+        <mat-icon>view_list</mat-icon>
+      </mat-button-toggle>
+      <mat-button-toggle value="cards" aria-label="Cards layout">
+        <mat-icon>view_comfortable</mat-icon>
+      </mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+
+  <div class="list-layout mat-elevation-z8 my-3" *ngIf="layout == 'list'">
+    <table mat-table [dataSource]="beers">
+
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let beer">
+          <a [routerLink]="['/beer',beer.id]">
+            {{beer.id}}
+          </a>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let beer">
+          <a [routerLink]="['/beer',beer.id]">
+            {{ beer.name }}
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="animate__animated animate__fadeIn"></tr>
+
+    </table>
+  </div>
+
+  <div class="card-layout mat-elevation-z8 my-3" *ngIf="layout == 'cards'">
+    <mat-grid-list [cols]="colNumber" rowHeight="1:1">
+      <mat-grid-tile *ngFor="let beer of beers">
+        <a [routerLink]="['/beer',beer.id]" class="animate__animated animate__fadeIn">
+
+          <mat-card>
+            <mat-card-header>
+              <mat-card-title>
+                <h2>{{ beer.id }}</h2>
+              </mat-card-title>
+            </mat-card-header>
+
+            <mat-card-content>
+              {{ beer.name }}
+            </mat-card-content>
+
+          </mat-card>
+        </a>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>
+
+<div id="spinner" *ngIf="showSpinner">
+  <mat-progress-spinner color="primary" mode="indeterminate" class="spinner-element">
+  </mat-progress-spinner>
 </div>
