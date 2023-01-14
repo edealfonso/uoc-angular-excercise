@@ -33,12 +33,11 @@
   "dataGroups": [
     {
       "name": "punk-beer-api",
-      "urls": ["https://api.punkapi.com/v2/**"],
+      "urls": ["https://api.punkapi.com/v2/beers/**"],
       "cacheConfig": {
         "maxSize": 10,
         "maxAge": "1h",
-        "timeout": "1s",
-        "strategy": "freshness"
+        "strategy": "performance"
       }
     }
   ]
