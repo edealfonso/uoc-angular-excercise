@@ -1,0 +1,30 @@
+<div class="container mt-5 pb-5">
+
+  <h1>Punk Beers Portal</h1>
+
+  <div *ngIf="beers.length > 0">
+    <div class="buttons">
+      <mat-button-toggle-group #group="matButtonToggleGroup" [value]="layout" (change)="onLayoutChange(group.value)">
+        <mat-button-toggle value="list" aria-label="List layout">
+          <mat-icon>view_list</mat-icon>
+        </mat-button-toggle>
+        <mat-button-toggle value="cards" aria-label="Cards layout">
+          <mat-icon>view_comfortable</mat-icon>
+        </mat-button-toggle>
+      </mat-button-toggle-group>
+    </div>
+
+    <div class="mat-elevation-z8 my-3" *ngIf="layout == 'list'">
+      <app-list [beers]="beers" [entity]="entityType"></app-list>
+    </div>
+
+    <div class="mat-elevation-z8 my-3" *ngIf="layout == 'cards'">
+      <app-cards [beers]="beers" [entity]="entityType"></app-cards>
+    </div>
+  </div>
+</div>
+
+<div id="spinner" *ngIf="showSpinner">
+  <mat-progress-spinner color="primary" mode="indeterminate" class="spinner-element">
+  </mat-progress-spinner>
+</div>

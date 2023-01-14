@@ -1,0 +1,24 @@
+<table mat-table [dataSource]="beers">
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> Id </th>
+    <td mat-cell *matCellDef="let beer">
+      <a (click)="navigate(beer.id)">
+        {{beer.id}}
+      </a>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let beer">
+      <a (click)="navigate(beer.id)">
+        {{ beer.name }}
+      </a>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;" class="animate__animated animate__fadeIn"></tr>
+
+</table>

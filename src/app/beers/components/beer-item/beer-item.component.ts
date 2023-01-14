@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Beer } from 'src/app/models/beer.interface';
-import { BeersService } from 'src/app/services/beers.service';
+import { Beer } from '../../models/beer.interface';
+import { BeersService } from '../../services/beers.service';
 
 @Component({
   selector: 'app-beer-item',
@@ -29,5 +29,11 @@ export class BeerItemComponent implements OnInit {
       this.beer = beers[0];
       console.log('Beer --> ', this.beer);
     });
+  }
+
+  navigate(): void {
+    this.router
+      .navigateByUrl('/', { skipLocationChange: true })
+      .then(() => this.router.navigate(['/']));
   }
 }

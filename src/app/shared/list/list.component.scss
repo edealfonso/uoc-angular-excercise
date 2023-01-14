@@ -1,0 +1,18 @@
+table {
+  tr[mat-row] {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: #ffd740;
+    }
+
+    a {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  th {
+    background-color: transparent !important;
+  }
+}
