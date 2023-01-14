@@ -5,6 +5,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { BeerItemComponent } from './components/beer-item/beer-item.component';
 import { BeerListComponent } from './components/beer-list/beer-list.component';
@@ -19,6 +20,7 @@ import { BeerListComponent } from './components/beer-list/beer-list.component';
     MatButtonModule,
     MatButtonToggleModule,
     SharedModule,
+    RouterModule,
   ],
   exports: [BeerItemComponent, BeerListComponent],
 })

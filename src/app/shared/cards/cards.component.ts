@@ -1,5 +1,4 @@
 import { Component, HostListener, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Beer } from 'src/app/beers/models/beer.interface';
 
 @Component({
@@ -12,9 +11,8 @@ export class CardsComponent implements OnInit {
   @Input()
   beers: Beer[] = [];
   colNumber: number;
-  @Input() entity: string = 'beer';
 
-  constructor(private router: Router) {
+  constructor() {
     this.colNumber = this.recalcCols();
   }
 
@@ -35,11 +33,5 @@ export class CardsComponent implements OnInit {
       return 4;
     }
     return 5;
-  }
-
-  navigate(id: number): void {
-    this.router
-      .navigateByUrl('/', { skipLocationChange: true })
-      .then(() => this.router.navigate(['/' + this.entity, id]));
   }
 }

@@ -30,10 +30,4 @@ export class BeerItemComponent implements OnInit {
       console.log('Beer --> ', this.beer);
     });
   }
-
-  navigate(): void {
-    this.router
-      .navigateByUrl('/', { skipLocationChange: true })
-      .then(() => this.router.navigate(['/']));
-  }
 }

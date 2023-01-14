@@ -5,6 +5,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTableModule } from '@angular/material/table';
+import { RouterModule } from '@angular/router';
 import { CardsComponent } from './cards/cards.component';
 import { ListComponent } from './list/list.component';
 
@@ -16,6 +17,7 @@ import { ListComponent } from './list/list.component';
     MatCardModule,
     MatGridListModule,
     MatIconModule,
+    RouterModule,
   ],
   exports: [CardsComponent, ListComponent],
 })

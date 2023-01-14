@@ -1,6 +1,6 @@
 <mat-grid-list [cols]="colNumber" rowHeight="1:1">
   <mat-grid-tile *ngFor="let beer of beers">
-    <a (click)="navigate(beer.id)" class="animate__animated animate__fadeIn">
+    <a [routerLink]="'beer/' + (beer.id)" class="animate__animated animate__fadeIn">
 
       <mat-card>
 

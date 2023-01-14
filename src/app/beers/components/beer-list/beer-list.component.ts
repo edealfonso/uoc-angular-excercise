@@ -11,7 +11,6 @@ export class BeerListComponent implements OnInit {
   beers: Beer[] = [];
   showSpinner: boolean = true;
   layout: string = 'list';
-  entityType: string = 'beer';
 
   constructor(private beersService: BeersService) {}
 
